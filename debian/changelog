@@ -1,0 +1,161 @@
+ros-lunar-nerian-stereo (2.0.1-0stretch) stretch; urgency=high
+
+  * Fixed support for 12-bit images
+  * Fixed build problems
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Sun, 01 Oct 2017 22:00:00 -0000
+
+ros-lunar-nerian-stereo (2.0.0-0stretch) stretch; urgency=high
+
+  * Renamed node to nerian_stereo
+  * Updated to libvisiontransfer 5.0.0 to support new SceneScan sensor
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Thu, 28 Sep 2017 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.6.2-0stretch) stretch; urgency=high
+
+  * Allow launch even if calibration file is not found
+  * Implemented upper limit for point cloud depth (max_depth parameter)
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Mon, 29 May 2017 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.6.1-0stretch) stretch; urgency=high
+
+  * Updated libvisiontransfer to version 4.1.2
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Sun, 26 Mar 2017 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.6.0-0stretch) stretch; urgency=high
+
+  * Updated SP1 software to version 4.1.0
+  * Script and launch file for downloading camera calibration
+  * Added optional execution delay
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Tue, 14 Feb 2017 23:00:00 -0000
+
+ros-lunar-nerian-stereo (1.5.1-0stretch) stretch; urgency=high
+
+  * Added proper error reporting in case of exceptions
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Wed, 18 Jan 2017 23:00:00 -0000
+
+ros-lunar-nerian-stereo (1.5.0-0stretch) stretch; urgency=high
+
+  * Switched to new sp1 software release 4.0.0
+  * Added example code for operation mode configuration to launch script
+  * Added example scripts for switching SP1 operation mode
+  * Separate topic for right image and bugfix for right image output
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Mon, 16 Jan 2017 23:00:00 -0000
+
+ros-lunar-nerian-stereo (1.4.0-0stretch) stretch; urgency=high
+
+  * Updated to SP1 software release 3.0.0
+  * Removed automatic installation of spcom
+  * Handling of point cloud exceptions
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Thu, 06 Oct 2016 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.3.3-0stretch) stretch; urgency=high
+
+  * Updated SP1 software release to version 2.1.6
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Mon, 16 May 2016 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.3.2-0stretch) stretch; urgency=high
+
+  * Build fix for ROS kinetic
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Sun, 08 May 2016 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.3.1-0stretch) stretch; urgency=high
+
+  * Added missing launch file to ROS package
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Wed, 04 May 2016 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.3.0-0stretch) stretch; urgency=high
+
+  * Updated sp1 software release to version 2.1.5
+  * Support for changing q-matrix (caused by auto re-calibration)
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Thu, 17 Mar 2016 23:00:00 -0000
+
+ros-lunar-nerian-stereo (1.2.2-0stretch) stretch; urgency=high
+
+  * Upgraded libvisiontransfer to version 2.1.2
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Thu, 11 Feb 2016 23:00:00 -0000
+
+ros-lunar-nerian-stereo (1.2.1-0stretch) stretch; urgency=high
+
+  * Upgraded libvisiontransfer to version 2.1.1
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Mon, 11 Jan 2016 23:00:00 -0000
+
+ros-lunar-nerian-stereo (1.2.0-0stretch) stretch; urgency=high
+
+  * Added current release candidate of libvisiontransfer 2.0.0
+  * Adaptations for libvisiontransfer 2.0.0
+  * Support transfer of Q matrix
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Sun, 22 Nov 2015 23:00:00 -0000
+
+ros-lunar-nerian-stereo (1.1.2-0stretch) stretch; urgency=high
+
+  * Fixed bug that prevented conversion of point cloud message to PCL object
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Sun, 04 Oct 2015 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.1.1-0stretch) stretch; urgency=high
+
+  * Updated to libvisiontransfer 1.0.2
+  * Installing libvisiontransfer headers
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Mon, 14 Sep 2015 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.1.0-0stretch) stretch; urgency=high
+
+  * Cleaned-up example launch file
+  * Minor bugfixes
+  * Updated SP1 software package
+  * Publishing of camera information
+  * Optional disparity window
+  * Performance optimization
+  * Removed enable parameters
+  * Fixed ROS coordinate system
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Tue, 25 Aug 2015 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.0.2-0stretch) stretch; urgency=high
+
+  * Minor fixes to build files
+  * Contributors: Konstantin Schauwecker
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Mon, 24 Aug 2015 22:00:00 -0000
+
+ros-lunar-nerian-stereo (1.0.1-0stretch) stretch; urgency=high
+
+  * Initial release
+  * Contributors: Konstantin Schauwecker, nerian-vision
+
+ -- Konstantin Schauwecker <konstantin.schauwecker@nerian.com>  Mon, 24 Aug 2015 22:00:00 -0000
+
+
