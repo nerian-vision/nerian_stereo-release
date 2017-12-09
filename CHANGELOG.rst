@@ -2,6 +2,12 @@
 Changelog for package nerian_stereo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.0 (2017-12-09)
+------------------
+* New color coding scheme: rainbow
+* Automatic selection of color legend range
+* Contributors: Konstantin Schauwecker
+
 2.0.3 (2017-10-20)
 ------------------
 * Build fix for Ubuntu Zesty
