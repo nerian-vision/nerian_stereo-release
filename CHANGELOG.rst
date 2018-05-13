@@ -2,6 +2,11 @@
 Changelog for package nerian_stereo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.0 (2018-05-13)
+------------------
+* Added support for RGB point cloud output
+* Contributors: Konstantin Schauwecker
+
 2.1.0 (2017-12-09)
 ------------------
 * New color coding scheme: rainbow
