@@ -2,6 +2,11 @@
 Changelog for package nerian_stereo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.0 (2018-06-08)
+------------------
+* Updated to Nerian software release 6.0.0
+* Contributors: Konstantin Schauwecker
+
 2.2.0 (2018-05-13)
 ------------------
 * Added support for RGB point cloud output
