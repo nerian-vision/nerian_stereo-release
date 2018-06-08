@@ -1,3 +1,26 @@
+## nerian_stereo (melodic) - 3.0.0-0
+
+The packages in the `nerian_stereo` repository were released into the `melodic` distro by running `/usr/bin/bloom-release --rosdistro melodic --track melodic nerian_stereo -y` on `Fri, 08 Jun 2018 12:28:39 -0000`
+
+The `nerian_stereo` package was released.
+
+Version of package(s) in repository `nerian_stereo`:
+
+- upstream repository: https://github.com/nerian-vision/nerian_stereo.git
+- release repository: https://github.com/nerian-vision/nerian_stereo-release.git
+- rosdistro version: `2.2.0-0`
+- old version: `2.2.0-0`
+- new version: `3.0.0-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.26`
+- catkin_pkg version: `0.2.10`
+- rosdep version: `0.11.8`
+- rosdistro version: `0.5.0`
+- vcstools version: `0.1.40`
+
+
 ## nerian_stereo (melodic) - 2.2.0-0
 
 The packages in the `nerian_stereo` repository were released into the `melodic` distro by running `/usr/bin/bloom-release --rosdistro melodic --track melodic nerian_stereo -y --new-track` on `Sun, 13 May 2018 16:55:33 -0000`
