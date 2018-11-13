@@ -2,6 +2,11 @@
 Changelog for package nerian_stereo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.1.1 (2018-11-13)
+------------------
+* Fixed CMake build problem
+* Contributors: Konstantin Schauwecker
+
 3.1.0 (2018-11-10)
 ------------------
 * Removed arch=native flag from compiler options
