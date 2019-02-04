@@ -26,6 +26,7 @@
 #include <colorcoder.h>
 
 using namespace std;
+using namespace visiontransfer;
 
 /**
  * \brief A driver node that receives data from SceneScan/SP1 and forwards
@@ -102,6 +103,10 @@ public:
             rosCoordinateSystem = true;
         }
 
+        if (!privateNh.getParam("ros_timestamps", rosTimestamps)) {
+            rosTimestamps = true;
+        }
+
         if (!privateNh.getParam("calibration_file", calibFile)) {
             calibFile = "";
         }
@@ -155,7 +160,15 @@ public:
                     continue;
                 }
 
-                ros::Time stamp = ros::Time::now();
+                // Get time stamp
+                ros::Time stamp;
+                if(rosTimestamps) {
+                    stamp = ros::Time::now();
+                } else {
+                    int secs = 0, microsecs = 0;
+                    imagePair.getTimestamp(secs, microsecs);
+                    stamp = ros::Time(secs, microsecs*1000);
+                }
 
                 // Publish image data messages
                 publishImageMsg(imagePair, 0, stamp, false, leftImagePublisher.get());
@@ -216,6 +229,7 @@ private:
     std::string colorCodeDispMap;
     bool colorCodeLegend;
     bool rosCoordinateSystem;
+    bool rosTimestamps;
     std::string remotePort;
     std::string frame;
     std::string remoteHost;
@@ -410,7 +424,7 @@ private:
         cloudPublisher->publish(pointCloudMsg);
     }
 
-    /*
+    /**
      * \brief Copies the intensity or RGB data to the point cloud
      */
     template <PointCloudColorMode colorMode> void copyPointCloudIntensity(ImagePair& imagePair) {
