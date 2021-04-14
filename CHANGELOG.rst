@@ -2,10 +2,22 @@
 Changelog for package nerian_stereo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.9.0 (2021-04-14)
+------------------
+* ROS transform (tf2) live updates for Nerian devices with IMU
+* Added script for splitting camera info
+* Updated vision software release
+* Contributors: Konstantin Schauwecker, Ramin Yaghoubzadeh Torky
+
+3.8.1 (2020-07-30)
+------------------
+* Build fix for Ubuntu 20.04
+* Contributors: Konstantin Schauwecker
+
 3.8.0 (2020-07-29)
 ------------------
 * Updated to nerian software release version 8.1.0
-* Support for Support for 1 to 3 images in result set
+* Support for 1 to 3 images in result set
 * Added new device configuration variables
 * Contributors: Konstantin Schauwecker, Ramin Yaghoubzadeh Torky
 
