@@ -2,6 +2,13 @@
 Changelog for package nerian_stereo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.9.0 (2021-04-14)
+------------------
+* ROS transform (tf2) live updates for Nerian devices with IMU
+* Added script for splitting camera info
+* Updated vision software release
+* Contributors: Konstantin Schauwecker, Ramin Yaghoubzadeh Torky
+
 3.8.1 (2020-07-30)
 ------------------
 * Build fix for Ubuntu 20.04
