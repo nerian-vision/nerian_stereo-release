@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2019 Nerian Vision GmbH
+ * Copyright (c) 2021 Nerian Vision GmbH
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -19,11 +19,14 @@ namespace nerian_stereo {
 
 void StereoNodelet::stereoIteration(const ros::TimerEvent&) {
     processOneImageSet();
+    processDataChannels();
 }
 
 void StereoNodelet::onInit() {
     StereoNodeBase::init();
+    StereoNodeBase::initDataChannelService();
     StereoNodeBase::initDynamicReconfigure();
+    StereoNodeBase::publishTransform(); // initial transform
     prepareAsyncTransfer();
     // 2kHz timer for lower latency (stereoIteration will then block)
     timer = getNH().createTimer(ros::Duration(0.0005), &StereoNodelet::stereoIteration, this);
