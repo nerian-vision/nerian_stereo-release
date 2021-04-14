@@ -5,7 +5,7 @@ project(nerian_stereo)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sensor_msgs cv_bridge
-    message_generation dynamic_reconfigure)
+    message_generation dynamic_reconfigure tf2_ros)
 
 ## System dependencies are found with CMake's conventions
 find_package(OpenCV REQUIRED)
@@ -26,9 +26,19 @@ generate_dynamic_reconfigure_options(cfg/NerianStereo.cfg)
 include_directories(${dynamic_reconfigure_PACKAGE_PATH}/cmake/cfgbuild.cmake)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/cfg/cpp)
 
+# Look for python
+message(STATUS "looking for python3")
+set(Python3_EXECUTABLE "python3")
+# This is for CMake 3.12 and up; making sure we get python3
+find_package (Python3 COMPONENTS Interpreter)
+if(NOT Python3_FOUND)
+    # We don't give up just yet
+    message(WARNING "Failed finding python3 with FindPython3. Assuming python3 is \"${Python3_EXECUTABLE}\"")
+endif()
+
 # Generate our own run-time parameter update code (from the same cfg file)
 message(STATUS "Generate parameter server / dynamic_reconfigure code ...")
-execute_process(COMMAND "python" "${CMAKE_CURRENT_LIST_DIR}/cfg/generate_nerian_config_cpp.py"
+execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_LIST_DIR}/cfg/generate_nerian_config_cpp.py"
                 "cfg/NerianStereo.cfg"
                 "src/autogen_nerian_stereo_dynamic_reconfigure.cpp"
                 WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/"
@@ -37,7 +47,7 @@ execute_process(COMMAND "python" "${CMAKE_CURRENT_LIST_DIR}/cfg/generate_nerian_
                 ERROR_VARIABLE  autogen_output)
 if(autogen_result)
     message(STATUS "Output of failing script:\n${autogen_output}")
-    message(SEND_ERROR "Failure in code generation script")
+    message(FATAL_ERROR "Failure in code generation script")
 endif()
 
 ###################################
@@ -93,8 +103,8 @@ if(BUILD_VT)
     # Build sources at runtime
     add_custom_target(nerian_stereo_visiontransfer_stub ALL
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/nerian-vision-software-${VT_VERSION}-src.tar.xz
-        COMMAND ${CMAKE_COMMAND} . -DCMAKE_CXX_FLAGS=${VT_CXX_FLAGS} -DDISABLE_NATIVE=1 -DDISABLE_PCL=1 -DDISABLE_OPENCV=1
-        COMMAND make
+        COMMAND ${CMAKE_COMMAND} . -DCMAKE_CXX_FLAGS=${VT_CXX_FLAGS} -DDISABLE_NATIVE=1 -DDISABLE_PCL=1 -DDISABLE_OPENCV=1 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+        COMMAND make VERBOSE=1
         COMMAND cp lib/libvisiontransfer.so ${CATKIN_DEVEL_PREFIX}/lib/
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/nerian-vision-software-${VT_VERSION}-src/libvisiontransfer
     )
@@ -134,7 +144,7 @@ if(COMPILER_SUPPORTS_CXX11)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 elseif(COMPILER_SUPPORTS_CXX0X)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-else()	
+else()
     message(WARNING "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
