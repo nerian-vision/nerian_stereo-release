@@ -1,3 +1,26 @@
+## nerian_stereo (noetic) - 3.9.1-1
+
+The packages in the `nerian_stereo` repository were released into the `noetic` distro by running `/usr/bin/bloom-release --rosdistro noetic --track noetic nerian_stereo -y` on `Tue, 01 Mar 2022 12:43:27 -0000`
+
+The `nerian_stereo` package was released.
+
+Version of package(s) in repository `nerian_stereo`:
+
+- upstream repository: https://github.com/nerian-vision/nerian_stereo.git
+- release repository: https://github.com/nerian-vision/nerian_stereo-release.git
+- rosdistro version: `3.9.0-5`
+- old version: `3.9.0-5`
+- new version: `3.9.1-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.7`
+- catkin_pkg version: `0.4.23`
+- rosdep version: `0.20.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## nerian_stereo (kinetic) - 3.9.0-3
 
 The packages in the `nerian_stereo` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --rosdistro kinetic --track kinetic nerian_stereo -y` on `Wed, 14 Apr 2021 12:46:37 -0000`
