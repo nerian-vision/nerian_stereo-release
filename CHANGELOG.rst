@@ -2,6 +2,12 @@
 Changelog for package nerian_stereo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.9.1 (2022-03-01)
+------------------
+* Updated vision software release
+* Fixed point cloud color channel issue with large RGB images
+* Contributors: Konstantin Schauwecker
+
 3.9.0 (2021-04-14)
 ------------------
 * ROS transform (tf2) live updates for Nerian devices with IMU
